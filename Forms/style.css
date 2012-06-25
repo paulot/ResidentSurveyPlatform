@@ -1,0 +1,205 @@
+@CHARSET "UTF-8";
+
+
+
+body {
+  background: #DDD;
+  font:"Lucida Grande", "Lucida Sans", "Trebuchet MS", verdana, sans-serif;
+  z-index: -5;
+}
+.login{
+	
+}
+
+.center-form{
+	display: table;
+    margin: 10px auto;
+}
+
+#container, #login-container {
+	margin-left:auto;
+	margin-right: auto;
+  background-color: white;
+  padding: 20px;
+  width: 768px;
+  z-index: 100;
+  -webkit-box-shadow:
+        1px 1px   0 rgba(0,   0,   0,   0.100),
+        3px 3px   0 rgba(255, 255, 255, 1.0),
+        4px 4px   0 rgba(0,   0,   0,   0.125),
+        6px 6px   0 rgba(255, 255, 255, 1.0),
+        7px 7px   0 rgba(0,   0,   0,   0.150),
+        9px 9px   0 rgba(255, 255, 255, 1.0),
+        10px 10px 0 rgba(0,   0,   0,   0.175);
+  -moz-box-shadow:
+        1px 1px   0 rgba(0,   0,   0,   0.100),
+        3px 3px   0 rgba(255, 255, 255, 1.0),
+        4px 4px   0 rgba(0,   0,   0,   0.125),
+        6px 6px   0 rgba(255, 255, 255, 1.0),
+        7px 7px   0 rgba(0,   0,   0,   0.150),
+        9px 9px   0 rgba(255, 255, 255, 1.0),
+        10px 10px 0 rgba(0,   0,   0,   0.175);
+  box-shadow:
+        1px 1px   0 rgba(0,   0,   0,   0.100),
+        3px 3px   0 rgba(255, 255, 255, 1.0),
+        4px 4px   0 rgba(0,   0,   0,   0.125),
+        6px 6px   0 rgba(255, 255, 255, 1.0),
+        7px 7px   0 rgba(0,   0,   0,   0.150),
+        9px 9px   0 rgba(255, 255, 255, 1.0),
+        10px 10px 0 rgba(0,   0,   0,   0.175);
+
+}
+
+.body-login{
+	
+}
+
+.header{
+	text-align: center;
+}
+.note{
+	font-size: 14px;
+}
+
+hr{
+}
+
+form{
+	display:block;
+}
+a{
+	text-decoration: none;
+	color:#000;
+}
+strong{
+	font-weight: bold;
+}
+
+ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.title{
+	font-size:15px;
+}
+.answer, #login-span{
+	display:table-row;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px; /* future proofing */
+	-khtml-border-radius: 10px; /* for old Konqueror browsers */
+}
+.login-input{
+	padding: 5px 5px 5px 5px;
+	margin: 5px 5px 5px 5px;
+	font-size: large;
+	border: ;
+	
+}
+#login-span{
+	
+}
+.login{
+	text-align: center;
+	
+}
+
+.answer:HOVER{
+	background-color: #CCC;
+}
+
+label{
+	font-size:12px;
+}
+h1, h2, h3{
+	margin-bottom: 0px;
+	margin-top: 0px; 
+}
+h1, h2, h3, li, ul{
+	font-family: sans-serif;
+}
+li{
+	margin-left: 10px;
+}
+.rangeSlider{
+	width: 220px;
+}
+.tinyTextBox{
+	width:30px;
+	border: none;
+	font-size: 12px;
+}
+.mediumText, .mediumTextOther{
+	border: none;
+	font-size: 14px;
+	width: 350px;
+	background-color: #EEE;
+}
+
+.mediumTextOther{
+	visibility: hidden;
+}
+
+.dropdown{
+	border: none;
+	background-color: inherit;
+}
+.bigText{
+	border: none;
+	background-color: #EEE;
+	width: 580px;
+	height: 100px;
+	max-width: 580px;
+	max-height: 300px;
+	font-family: "Lucida Grande", "Lucida Sans", "Trebuchet MS", verdana, sans-serif;
+}
+
+div.menu{
+	position: absolute; 
+    width:80px; 
+    
+}
+.menu-list{ 
+    margin-bottom:20px;  
+}  
+a.menu:hover{
+	color: #444;
+}
+li.menu{
+	display: inline-block;
+	
+}
+.menudata{
+	width: 0px;
+	overflow: hidden;
+}
+.menu {  
+	table-layout: fixed;
+    display:block;      
+    text-decoration:none; 
+    z-index: 0;
+    overflow: hidden;
+    
+
+  
+}
+#floatdiv{
+
+}
+.radioBottons{
+	
+}
+
+.sliderLabel{
+	text-align: center;
+}
+
+.menuIndex{
+	background-color: orange;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px; /* future proofing */
+	-khtml-border-radius: 10px; /* for old Konqueror browsers */
+
+}

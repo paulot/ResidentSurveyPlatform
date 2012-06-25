@@ -1,0 +1,102 @@
+<?php 
+	require_once '../Requires/Require_ALL.php';
+	
+	$MySQLDB->setName("test");
+	
+?>
+<?php 
+	$currentPatient = new Patient();
+
+
+?>
+
+
+
+
+
+<?php
+
+
+	
+	
+	
+	
+	
+	function makeExtra($Aland, $PPos, $Comob, $Seda){
+		switch ($Aland){
+		case 0:
+			$ALandmarks = "Good: easily palpable spinal dorsal process";
+			break;
+		case 1:
+			$ALandmarks = "Poor: difficult to palpate";
+			break;
+		case 2:
+			$ALandmarks = "None: unable to positively identify spinous process";
+			break;
+		}
+	
+	$PPosition = ($PPos = 0) ? "Good: able to flex spine adequately" : "Poor: unable to flex spine";
+	
+	return array(
+				"AnatomicalLandmarks" => $ALandmarks,
+				"Patient's Position" => $PPosition,
+				"Co-Mobidities" => $Comob, 
+				"Sedation" => $Seda
+		);
+	
+		
+	}
+
+?>
+
+
+<?php
+
+	/*
+	$ALandmarks;
+	switch ($_POST["group4"]){
+		case 0:
+			$ALandmarks = "Good: easily palpable spinal dorsal process";
+			break;
+		case 1:
+			$ALandmarks = "Poor: difficult to palpate";
+			break;
+		case 2:
+			$ALandmarks = "None: unable to positively identify spinous process";
+			break;
+	}
+	*/
+	//$PPosition = ($_POST["group5"] = 0) ? "Good: able to flex spine adequately" : "Poor: unable to flex spine";
+	
+	
+	//print_r($_POST);
+
+	$extra = makeExtra($_POST["group4"], $_POST["group5"], $_POST["group6"], $_POST["group7"]);
+	$extra =  $MySQLDB->prepArray($extra);
+	
+	function toKg($weight){ return 0.45359237*$weight; }
+	function ftTocm($ft){ return 30.48*$ft; }
+	function inTocm($in){ return 2.54*$in; }
+	
+	
+	if($_POST['heightDropDown'] == 'in') $height = inTocm($_POST["group3"]);
+	else if($_POST['heightDropDown'] == 'ft') $height = ftTocm($_POST["group3"]);
+	else $height = $_POST["group3"];
+	
+	$weight = ($_POST['weightDropDown'] == 'lb') ? toKg($_POST["group2"]) : $_POST["group2"];
+	
+	$MySQLDB->insert("timestamp, first_name, last_name, gender, age, height, weight, extra", 
+					'current_timestamp' . ",'" .$_POST["fname"] . "','" .$_POST["lname"] . "'," .
+					"'".$_POST["group0"]."'".','.$_POST["group1"].','.$height.','.$weight . "," . 
+					"'" . $MySQLDB->prep($extra) . "'"
+					 ,"Patient_info");
+					 
+		//$MySQLDB->findString('Paulo', 'first_name', 'Patient_info');			 
+	$arr = $MySQLDB->toArray($MySQLDB->findString("dd", "first_name", "Patient_info"));
+	$arr = $arr[8];
+	print_r($MySQLDB->unprepArray($arr));
+	//echo $MySQLDB->getError();
+	//echo "<br>";
+	//echo $MySQLDB->lastQuery();
+	
+?>

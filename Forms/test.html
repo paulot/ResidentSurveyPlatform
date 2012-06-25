@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="style.css" rel="stylesheet">
+<!-- JavaScript -->
+<script type="text/javascript" src="func.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script> 
+
+
+<title>Patient Demographic Information</title>
+</head>
+<body>
+	<div id="container">
+		<form action="../Submission/Submit.php" method="post">
+			<h1 class="header">Spinal Anesthesia Teaching Module:
+Patient Demographic Information</h1>
+			<hr>
+			<p class=note>
+				Orthopedic rotation director, please collect the following information regarding each
+				patient in which a spinal anesthetic is planned <br><br>
+				Sincerely,<br>Ankeet and Pedro
+			</p>
+			<ul class="question-list">
+				<!-- Each question is a li -->
+				<li class="questions">
+					<strong class = "title">What is the Patient's gender?</strong>
+					<span class="answer">
+						<input type="radio" name="group0" value="Male" class="radioButtons">
+						<label>
+							Male
+						</label>
+					</span>
+					<span class="answer">
+						<input type="radio" name="group0" value="Female" class="radioButtons">
+						<label>
+							Female
+						</label>
+					</span>
+				</li>
+				<li class="questions">
+					<strong class = "title">What is the Patient's First Name?</strong>
+					<span class="answer">
+						<input type="text" name="fname" class="mediumText" maxlength="30">
+						<label>
+							First Name
+						</label>
+					</span>
+				</li>
+				<li class="questions">
+					<strong class = "title">What is the Patient's Last Name?</strong>
+					<span class="answer">
+						<input type="text" name="lname" class="mediumText" maxlength="30">
+						<label>
+							Last Name
+						</label>
+					</span>
+				</li>
+				<li class="questions">
+					<strong class = "title">What is the Patient's age?</strong>
+					<span class="answer">
+						<input type="range" id="group1Slider" name="group1" class="rangeSlider" min="0" max="130" onchange="updateElement('group1ans', group1.value)">
+						<label>
+							Age:
+						</label>
+						<input id="group1ans" name="group1Box" value="65" type="text" class="tinyTextBox" onchange="updateElement('group1Slider', group1Box.value)" maxlength="3"> 
+						<label>years </label>
+					</span>
+				</li>
+				<li class="questions">
+					<strong class = "title">What is the Patient's weight?</strong>
+					<span class="answer">
+						<input type="range" id="group2Slider"  name="group2" class="rangeSlider" min="0" max="300" onchange="updateElement('group2ans', group2.value)">
+						<label>
+							Weight:
+						</label>
+						<input id="group2ans" name="group2Box" value="150" type="text" class="tinyTextBox" onchange="updateElement('group2Slider', group2Box.value)" maxlength="4">
+						<select id="weightDropdown" class="dropdown" name="weightDropDown">
+							<option value="kg">Kg</option>
+  							<option value="lb">Lbs</option>
+  						</select>
+					</span>
+				</li>
+				<li class="questions">
+					<strong class = "title">What is the Patient's height?</strong>
+					<span class="answer">
+						<input type="range" id="group3Slider"  name="group3" class="rangeSlider" min="0" max="280" onchange="updateElement('group3ans', group3.value)">
+						<label>
+							Height:
+						</label>
+						<input id="group3ans" name="group3Box" value="140" type="text" class="tinyTextBox" onchange="updateElement('group3Slider', group3Box.value)" maxlength="3">
+						<select id="heightDropdown" class="dropdown" name="heightDropDown">
+							<option value="cm">cm</option>
+  							<option value="ft">Feet</option>
+  							<option value="in">Inches</option>
+  						</select>
+					</span>
+				</li>
+				<li class="questions">
+					<strong class = "title">How are the patient’s anatomical landmarks?</strong>
+					<span class="answer">
+						<input type="range" id="group4Slider"  name="group4" class="rangeSlider" min="0" max="2" onchange="updateElementAE('group4ans', group4.value)">
+						<label id="group4ans" name="ALandmarks">Poor: difficult to palpate</label>
+					</span>
+				</li>
+				<li class="questions">
+					<strong class = "title">How is the patient able to position?</strong>
+					<span class="answer">
+						<input type="range" id="group5Slider"  name="group5" class="rangeSlider" min="0" max="1" value="0" onchange="updateElementPOS('group5ans', group5.value)">
+						<label id="group5ans">Good: able to flex spine adequately</label>
+					</span>
+				</li>
+				<li class="questions">
+					<strong class = "title">Does the patient have any of the following co-morbidities: back deformities, previous
+back surgeries? Please list.</strong>
+					<span class="answer">
+						<textarea id="group6Text"  name="group6" class="bigText"></textarea>
+					</span>
+				</li>
+				<li class="questions">
+					<strong class = "title">What sedation, if any, is planned for spinal anesthetic procedure?</strong>
+					<span class="answer">
+						<textarea id="group7Text"  name="group7" class="bigText"></textarea>
+					</span>
+				</li>
+				<li class="button">
+					<input id="submitbutton" name="submit" class="submitButtons" type="submit" value="Submit"/>
+				</li>
+			</ul>
+		</form>
+	</div>
+
+	 
+	 
+	 
+	 <div class=menu id="floatdiv">
+				<table class="menu">
+					<tr class="menu">
+						<td><span class="menudata">Item Number</span></td>
+						<td class="menuIndex" onclick="expandEl('menudata', 60)">1</td>
+					</tr>
+					<tr class="menu">
+						<td><span class="menudata">Item Number</span></td>
+						<td class="menuIndex" onclick="expandEl('menudata', 60)">2</td>
+					</tr>
+					<tr class="menu">
+						<td><span class="menudata">Item Number</span></td>
+						<td class="menuIndex" onclick="expandEl('menudata', 60)">3</td>
+					</tr>
+					<tr class="menu">
+						<td><span class="menudata">Item Number</span></td>
+						<td class="menuIndex" onclick="expandEl('menudata', 60)">4</td>
+					</tr>
+				</table>
+	</div>
+	 
+	 
+	 
+</body>
+
+<script type="text/javascript">
+	JSFX_FloatDiv("floatdiv", 80,30,"container").floatIt();
+	expandEl('menudata', 60);
+</script>
+</html>
