@@ -4,6 +4,9 @@
 	require_once '../Database/Connect.php';
 	require_once '../Classes/Form.php';
 	
+	error_reporting(E_ALL);
+	ini_set('display_errors', '1');
+	
 	
 	if(isLoggedIn()){
 		//Bounce the mothehfuckah
@@ -56,7 +59,7 @@
 		<meta charset="UTF-8">
 		<link href="../Forms/style.css" rel="stylesheet">
 		<script type="text/javascript" src="../Forms/func.js"></script>
-		<script type="text/javascript" src=https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script> 			
+		<script src="http://code.jquery.com/jquery-latest.js"></script>			
 	</head>
 	<body>
 		<div id="container" class="login">
@@ -78,6 +81,17 @@
 					<input id="submit" class="login-input" name="submit" type="submit" value="Submit">
 				</span>
 			</form>
+			<script>
+			    $("form").submit(function() {
+			      if ($("#username").val() == "" || $("#password").val() == "") {
+			        $(".message").text("Please provide both a Username and a Password").show().fadeOut(5000);
+			        return false;
+			      }
+			     //$(".message").text("A field is empty!").show().fadeOut(5000);
+			      return true;
+			    });
+			</script>
+
 			</div>
 		</div>
 	</body>

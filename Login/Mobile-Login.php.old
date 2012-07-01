@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        
+        <title>jQTouch &beta;</title>
+        <style type="text/css" media="screen">@import "../jqtouch/themes/css/jqtouch.css";</style>
+        <script src="../jqtouch/src/lib/zepto.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../jqtouch/src/jqtouch.min.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript" charset="utf-8">
+            var jQT = new $.jQTouch({});
+
+           // $(function(){
+                // Custom Javascript (onReady)
+            //});
+            $(function(){ 
+		$('body').bind('pageAnimationEnd', function(event, info){
+			//alert($('#Success')[0].innerHTML);
+			if ($('#Success') && $('#Success')[0].innerHTML=='Success'){
+				$(location).attr('href','http://www.jqtouch.com/');
+			}
+		});
+	});
+        </script>
+        <style type="text/css" media="screen">
+            /* Custom Style */
+        </style>
+    </head>
+    <body>
+        <div id="jqt">
+		<div id="login" target="_blank">
+		    	<div class="toolbar" target="_blank">
+				<h1>Login</h1>
+				<a class="button leftButton flip" href="#about" target="_blank">About</a>
+			</div>
+			<div class="message"></div>
+			 <form id="form-login" enctype="application/x-www-form-urlencoded" method="POST" action="dologin.php" >
+				<ul class="rounded" target="_blank">
+					<li>
+						<input type="text" placeholder="Username" value="" id="username"/>
+					</li>
+					<li>
+						<input type="password" placeholder="Password" value="" id="password"/>
+					</li>
+				</ul>
+				<a style="margin-top: 10px; margin-bottom: 10px; color:rgba(0,0,0,.9)" href="#" class="submit whiteButton">Login</a>
+			</form>
+			<!--<script>
+			    $("form").submit(function() {
+			      if ($("#username").val() == "" || $("#password").val() == "") {
+			        $(".message").text("Please provide both a Username and a Password").show().fadeOut(1000);
+			        return false;
+			      }
+			     //$(".message").text("A field is empty!").show().fadeOut(5000);
+			      return true;
+			    });
+			</script>-->
+		</div>
+        </div>
+    </body>
+</html>
