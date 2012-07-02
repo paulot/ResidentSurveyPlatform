@@ -1,0 +1,6 @@
+<?php
+	//File created with the intent of making it easy to update the requires on forms, as they are all the same
+	echo "Require forms is working";
+	require_once '../../../Requires/Form.php';
+
+?>
