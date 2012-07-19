@@ -1,6 +1,6 @@
 <?php 
 	//Actually creates the connection with the database
-	require_once 'MySQLDBconnect.php';
+	require_once '../../../Models/Database/MySQLDBconnect.php';
 	global $MySQLDB;
 	$MySQLDB = new MySQLDB();
 	$MySQLDB->setUser('root');

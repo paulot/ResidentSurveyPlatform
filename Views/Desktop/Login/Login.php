@@ -1,8 +1,9 @@
 <?php 
-	require_once '../Submission/SubmitFunctions.php';
-	require_once 'Session_start.php';	
-	require_once '../Database/Connect.php';
-	require_once '../Classes/Form.php';
+	require_once '/var/www//ResidentSurveyPlatform/Requires/Submission.php';
+	require_once '/var/www//ResidentSurveyPlatform/Requires/Require_Session.php';	
+	require_once '/var/www//ResidentSurveyPlatform/Requires/Database.php';
+	require_once '/var/www//ResidentSurveyPlatform/Requires/Form.php';
+	require_once '/var/www//ResidentSurveyPlatform/Requires/Models/Session/Session.php';
 	
 	error_reporting(E_ALL);
 	ini_set('display_errors', '1');
